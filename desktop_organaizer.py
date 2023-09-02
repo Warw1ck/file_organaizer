@@ -2,11 +2,11 @@ import os
 import shutil
 
 
-def organizer_dekstop(folder_name, file_type):
+def organizer_dekstop(folder_name, *file_types):
+    print(folder_name)
+    print(file_types)
     desktop_path = 'C:\\Users\\Warwick\\Desktop\\'
-    files_to_move = [dekstop_file for dekstop_file in list(os.listdir(desktop_path)) if dekstop_file.lower().endswith(file_type)]
-    print(list(os.listdir(desktop_path)))
-    print(files_to_move)
+    files_to_move = [dekstop_file for dekstop_file in list(os.listdir(desktop_path)) if os.path.splitext(dekstop_file)[1] in file_types]
     new_path = os.path.join(desktop_path, folder_name)
     if not os.path.exists(new_path):
         os.mkdir(new_path)
@@ -23,4 +23,3 @@ def organizer_dekstop(folder_name, file_type):
 
 
 
-organizer_dekstop('Desktop_Text', '.pdf')

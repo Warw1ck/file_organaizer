@@ -10,7 +10,7 @@ def create_root():
     root.wm_iconphoto(False, photo)
 
     root.configure(background='black')
-    root.title('Youtube Downloader')
+    root.title('Desktop Organizer')
     root.resizable(False, False)
     root.geometry("700x600")
 
